@@ -164,6 +164,8 @@ export default function Club() {
                     </button>
                     <input
                       type="number"
+                      name={`club-${v.slug}`}
+                      id={`club-${v.slug}`}
                       min="0"
                       max="12"
                       value={n}

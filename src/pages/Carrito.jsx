@@ -266,6 +266,8 @@ export default function Carrito() {
                           </button>
                           <input
                             type="number"
+                            name={`cesta-${vino.slug}`}
+                            id={`cesta-${vino.slug}`}
                             min="0"
                             max="99"
                             value={n}
