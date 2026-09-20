@@ -87,6 +87,8 @@ function Ficha({ vino }) {
               </button>
               <input
                 type="number"
+                name={`tienda-${vino.slug}`}
+                id={`tienda-${vino.slug}`}
                 min="1"
                 max="24"
                 value={n}
