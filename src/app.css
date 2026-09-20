@@ -1,0 +1,419 @@
+/* ---------- banda de demostracion ---------- */
+.banda {
+  position: relative;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.6rem clamp(1rem, 4vw, 2rem);
+  background: var(--tinta);
+  color: var(--papel);
+  text-align: center;
+}
+.banda p { font-size: 0.76rem; line-height: 1.45; letter-spacing: 0.01em; }
+.banda strong { font-weight: 700; }
+.banda__punto {
+  flex: 0 0 auto;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--oro);
+}
+
+/* ---------- cabecera ---------- */
+.cab {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 248, 244, 0.92);
+  backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid var(--linea);
+}
+.cab__in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; min-height: 64px; flex-wrap: wrap;
+}
+.cab__logo { display: block; flex: 0 0 auto; }
+.cab__logo img { width: 128px; height: auto; }
+.cab__nav {
+  display: flex; align-items: center; gap: clamp(0.7rem, 2.4vw, 1.6rem);
+  font: 600 0.7rem/1 var(--texto);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.cab__nav a { color: var(--tinta-70); text-decoration: none; padding: 0.4rem 0; white-space: nowrap; }
+.cab__nav a:hover { color: var(--tinta); }
+.cab__nav a.active { color: var(--rioja); box-shadow: inset 0 -2px 0 var(--rioja); }
+.cab__cesta { position: relative; display: inline-flex; align-items: center; gap: 0.4rem; }
+.cab__contador {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; padding: 0 5px; border-radius: 999px;
+  background: var(--rioja); color: #fff; font-size: 0.66rem; font-weight: 700;
+}
+
+/* ---------- portada ---------- */
+.hero { position: relative; min-height: min(78vh, 620px); display: grid; align-items: center; overflow: hidden; }
+.hero__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero__velo {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0, 20, 0, 0.18) 0%, rgba(0, 20, 0, 0.42) 55%, rgba(0, 20, 0, 0.72) 100%);
+}
+.hero__in { position: relative; text-align: center; padding-top: 4rem; padding-bottom: 4rem; }
+.hero__logo {
+  width: min(320px, 68vw); height: auto; margin: 0 auto;
+  filter: invert(1) brightness(1.7);
+}
+.hero__lugar {
+  margin-top: 1.1rem; color: rgba(255, 255, 255, 0.88);
+  font: 600 0.68rem/1.6 var(--texto); letter-spacing: 0.24em; text-transform: uppercase;
+}
+.hero__botones { margin-top: 2.2rem; display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.btn--claro { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.55); }
+.btn--claro:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* ---------- introduccion ---------- */
+.intro { padding: clamp(3rem, 8vw, 5.5rem) 0 clamp(1.5rem, 4vw, 2.5rem); max-width: 860px; }
+.intro .kicker { margin-bottom: 1rem; }
+.intro h2 { margin-bottom: 1.4rem; }
+.intro__texto { font-size: 1.02rem; color: var(--tinta-70); }
+.intro__nota {
+  margin-top: 1.5rem; padding-left: 1rem;
+  border-left: 3px solid var(--oro);
+  font-size: 0.88rem; color: var(--tinta-55);
+}
+
+/* ---------- puertas ---------- */
+.puertas { display: grid; gap: 1.2rem; padding-bottom: clamp(2rem, 6vw, 4rem); }
+.puerta {
+  position: relative; display: block; padding: clamp(1.6rem, 4vw, 2.4rem);
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  text-decoration: none; color: inherit; box-shadow: var(--sombra-suave);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.puerta:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.puerta h3 { margin: 0.7rem 0 0.6rem; }
+.puerta p { color: var(--tinta-70); font-size: 0.92rem; max-width: 46ch; }
+.puerta__flecha { position: absolute; right: clamp(1.4rem, 4vw, 2.2rem); bottom: clamp(1.4rem, 4vw, 2.2rem); color: var(--rioja); font-size: 1.3rem; }
+
+/* ---------- linea de visitas ---------- */
+.visita { padding-bottom: clamp(3rem, 7vw, 5rem); }
+.visita p { font-size: 0.88rem; color: var(--tinta-55); max-width: 62ch; }
+
+/* ---------- encabezado de seccion ---------- */
+.encabezado { padding: clamp(2.4rem, 6vw, 4rem) 0 1.4rem; max-width: 800px; }
+.encabezado .kicker { margin-bottom: 0.9rem; }
+.encabezado h1 { margin-bottom: 1.1rem; }
+.encabezado__bajada { color: var(--tinta-70); font-size: 0.98rem; }
+.encabezado__precios {
+  margin-top: 1.3rem; padding: 0.85rem 1rem;
+  background: var(--papel-2); border-radius: 10px;
+  font-size: 0.9rem; font-weight: 600;
+  display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap;
+}
+.encabezado__cata { margin-top: 0.8rem; font-size: 0.83rem; color: var(--tinta-55); }
+
+/* ---------- tarjeta de vino ---------- */
+.lista { display: grid; gap: clamp(1.4rem, 3vw, 2rem); padding-bottom: 2rem; }
+.vino {
+  display: grid; gap: clamp(1.2rem, 3vw, 2.4rem);
+  padding: clamp(1.3rem, 3.4vw, 2.2rem);
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+}
+.vino__foto {
+  display: grid; place-items: center;
+  background: linear-gradient(170deg, var(--papel-2) 0%, var(--blanco) 100%);
+  border-radius: 10px; padding: 1.4rem 0;
+}
+.vino__foto img { width: auto; max-height: 260px; filter: drop-shadow(0 12px 24px rgba(0, 20, 0, 0.16)); }
+.vino__tipo {
+  font: 600 0.64rem/1 var(--texto); letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--acento, var(--rioja)); margin-bottom: 0.7rem;
+}
+.vino__nombre { font-size: clamp(1.7rem, 4.4vw, 2.3rem); margin-bottom: 1rem; }
+.vino__anada { color: var(--tinta-55); font-size: 0.62em; }
+.vino__datos {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem 1.1rem; padding: 0.95rem 0; margin-bottom: 1rem;
+  border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
+}
+.vino__datos dt {
+  font: 600 0.6rem/1 var(--texto); letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--tinta-55); margin-bottom: 0.3rem;
+}
+.vino__datos dd { font-size: 0.86rem; font-weight: 500; }
+.vino__nota { font-size: 0.9rem; color: var(--tinta-70); margin-bottom: 0.7rem; }
+.vino__cata {
+  margin: 1rem 0 1.2rem; padding: 0.9rem 1rem;
+  background: var(--papel); border-left: 3px solid var(--acento, var(--rioja));
+  border-radius: 0 8px 8px 0;
+  font-family: var(--display); font-size: 1.12rem; line-height: 1.45; color: var(--tinta);
+}
+.vino__cataetiqueta {
+  display: block; margin-bottom: 0.4rem;
+  font: 600 0.58rem/1 var(--texto); letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--tinta-55);
+}
+.vino__pdf {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font: 600 0.75rem/1 var(--texto); letter-spacing: 0.06em;
+  color: var(--tinta); text-decoration: none;
+  border-bottom: 1.5px solid var(--acento, var(--rioja)); padding-bottom: 3px;
+}
+.vino__pdf:hover { color: var(--acento, var(--rioja)); }
+.vino__compra { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--linea); }
+.vino__precio { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.vino__cifra { font-family: var(--display); font-size: 2.1rem; font-weight: 600; line-height: 1; }
+.vino__unidad { font-size: 0.8rem; color: var(--tinta-55); }
+.vino__acciones { display: flex; gap: 0.7rem; align-items: center; flex-wrap: wrap; }
+.vino__aviso { min-height: 1.3rem; margin-top: 0.55rem; font-size: 0.76rem; color: var(--verde); font-weight: 600; }
+
+/* ---------- selector de cantidad ---------- */
+.cant {
+  display: inline-flex; align-items: center;
+  border: 1.5px solid var(--linea); border-radius: 999px; background: var(--blanco);
+  overflow: hidden; flex: 0 0 auto;
+}
+.cant button {
+  display: grid; place-items: center;
+  width: 38px; height: 40px; border: 0; background: transparent;
+  color: var(--tinta); cursor: pointer; transition: background 0.16s var(--ease);
+}
+.cant button:hover { background: var(--papel-2); }
+.cant input {
+  width: 46px; height: 40px; border: 0; background: transparent;
+  text-align: center; font: 600 0.92rem var(--texto); color: var(--tinta);
+  -moz-appearance: textfield; appearance: textfield;
+}
+.cant input::-webkit-outer-spin-button,
+.cant input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* ---------- envio ---------- */
+.portes { padding: clamp(1.5rem, 4vw, 2.5rem) 0 clamp(3rem, 7vw, 5rem); max-width: 720px; }
+.portes h2 { margin-bottom: 1rem; }
+.portes ul { list-style: none; display: grid; gap: 0.6rem; }
+.portes li { display: flex; gap: 0.6rem; align-items: baseline; font-size: 0.92rem; flex-wrap: wrap; }
+.portes__nota { margin-top: 1.1rem; font-size: 0.85rem; color: var(--tinta-55); }
+
+/* ---------- barra inferior ---------- */
+.barra {
+  position: sticky; bottom: 0; z-index: 40;
+  background: var(--tinta); color: var(--papel);
+  padding: 0.7rem 0;
+}
+.barra__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.barra p { display: flex; align-items: baseline; gap: 0.6rem; font-size: 0.85rem; flex-wrap: wrap; }
+.barra__total { font-family: var(--display); font-size: 1.5rem; font-weight: 600; }
+
+/* ---------- pantallas internas ---------- */
+.pantalla { padding: clamp(2rem, 5vw, 3.4rem) 0 clamp(3rem, 7vw, 5rem); }
+.pantalla h1 { margin-bottom: 0.9rem; }
+.pantalla__bajada { color: var(--tinta-70); font-size: 0.94rem; margin-bottom: 1.5rem; max-width: 58ch; }
+.pantalla__botones { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+/* ---------- pasos ---------- */
+.pasos { list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; padding: 0; }
+.pasos li {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.4rem 0.85rem 0.4rem 0.4rem; border-radius: 999px;
+  background: var(--papel-2); color: var(--tinta-55);
+  font: 600 0.68rem/1 var(--texto); letter-spacing: 0.08em; text-transform: uppercase;
+}
+.pasos li.es { background: var(--tinta); color: var(--papel); }
+.pasos li.ya { background: var(--blanco); color: var(--verde); border: 1px solid var(--linea); }
+.pasos__n {
+  display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(0, 20, 0, 0.09); font-size: 0.7rem;
+}
+.pasos li.es .pasos__n { background: rgba(255, 255, 255, 0.2); }
+.pasos li.ya .pasos__n { background: transparent; }
+
+/* ---------- cesta ---------- */
+.cesta { display: grid; gap: clamp(1.5rem, 4vw, 2.6rem); align-items: start; }
+.cesta__lista { list-style: none; display: grid; gap: 0.9rem; margin-bottom: 1.4rem; padding: 0; }
+.cesta__linea {
+  display: grid; grid-template-columns: 46px 1fr; gap: 0.8rem 0.9rem; align-items: center;
+  padding: 0.9rem; background: var(--blanco);
+  border: 1px solid var(--linea); border-radius: 10px;
+}
+.cesta__linea img { width: 46px; height: auto; grid-row: span 2; align-self: center; }
+.cesta__nombre { font-family: var(--display); font-size: 1.3rem; font-weight: 600; line-height: 1.15; }
+.cesta__sub { font-size: 0.72rem; color: var(--tinta-55); margin-top: 0.15rem; }
+.cesta__unit { font-size: 0.76rem; color: var(--tinta-70); margin-top: 0.35rem; display: flex; gap: 0.4rem; align-items: baseline; flex-wrap: wrap; }
+.cesta__cant { display: flex; align-items: center; gap: 0.7rem; grid-column: 2; flex-wrap: wrap; }
+.cesta__quitar {
+  border: 0; background: transparent; cursor: pointer; padding: 0.3rem 0;
+  font: 600 0.7rem/1 var(--texto); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--tinta-55); border-bottom: 1px solid var(--linea);
+}
+.cesta__quitar:hover { color: var(--rioja); }
+.cesta__importe {
+  grid-column: 2; display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap;
+  font-family: var(--display); font-size: 1.35rem; font-weight: 600;
+}
+
+/* ---------- resumen ---------- */
+.resumen {
+  padding: clamp(1.2rem, 3vw, 1.7rem);
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+}
+.resumen h3 { font-size: 1.35rem; margin-bottom: 1rem; }
+.resumen__lineas { list-style: none; display: grid; gap: 0.55rem; padding: 0; margin-bottom: 1rem; }
+.resumen__lineas li { display: flex; justify-content: space-between; gap: 0.7rem; font-size: 0.84rem; align-items: baseline; }
+.resumen__vino { color: var(--tinta-70); }
+.resumen__cifra { display: inline-flex; gap: 0.4rem; align-items: baseline; white-space: nowrap; font-weight: 600; }
+.resumen__totales { display: grid; gap: 0.55rem; padding-top: 0.9rem; border-top: 1px solid var(--linea); }
+.resumen__totales > div { display: flex; justify-content: space-between; gap: 0.7rem; font-size: 0.86rem; align-items: baseline; }
+.resumen__totales dd { display: inline-flex; gap: 0.4rem; align-items: baseline; font-weight: 600; white-space: nowrap; }
+.resumen__final { padding-top: 0.6rem; border-top: 1px solid var(--linea); }
+.resumen__final dt { font-weight: 700; }
+.resumen__final dd { font-family: var(--display); font-size: 1.5rem; }
+.resumen__pie { margin-top: 0.9rem; font-size: 0.74rem; color: var(--tinta-55); }
+
+/* ---------- formularios ---------- */
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; }
+.campo { display: block; }
+.campo--ancho { grid-column: 1 / -1; }
+.campo > span {
+  display: block; margin-bottom: 0.35rem;
+  font: 600 0.63rem/1 var(--texto); letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--tinta-55);
+}
+.campo input, .campo textarea {
+  width: 100%; padding: 0.72rem 0.85rem;
+  border: 1.5px solid var(--linea); border-radius: 9px; background: var(--blanco);
+  font: 400 0.92rem var(--texto); color: var(--tinta);
+  transition: border-color 0.18s var(--ease);
+}
+.campo input:focus, .campo textarea:focus { border-color: var(--rioja); }
+.campo textarea { resize: vertical; min-height: 78px; }
+.campo__fallo { display: block; margin-top: 0.3rem; font-size: 0.73rem; font-style: normal; color: var(--rioja); font-weight: 600; }
+.campo__fallo--suelto { margin: 0.6rem 0 0; }
+
+/* ---------- pago simulado ---------- */
+.pago {
+  padding: clamp(1.3rem, 3.4vw, 2rem);
+  background: var(--blanco); border: 1px dashed var(--oro); border-radius: var(--radio);
+}
+.pago__cabecera { font-size: 0.86rem; color: var(--tinta-70); margin-bottom: 1.1rem; }
+.pago__importe { display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.pago__cifra { font-family: var(--display); font-size: 2.4rem; font-weight: 600; line-height: 1; }
+.pago__entrega { font-size: 0.82rem; color: var(--tinta-55); margin-bottom: 1.3rem; }
+.pago__pie { margin-top: 0.8rem; font-size: 0.75rem; color: var(--tinta-55); text-align: center; }
+
+/* ---------- avisos ---------- */
+.aviso {
+  display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap;
+  padding: 0.85rem 1rem; border-radius: 10px;
+  font-size: 0.85rem; margin-bottom: 1.2rem;
+}
+.aviso--ojo { background: var(--papel-2); color: var(--tinta-70); }
+
+/* ---------- pantalla final ---------- */
+.hecho { text-align: left; }
+.hecho__marca {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--verde); color: #fff; margin-bottom: 1.2rem;
+}
+.hecho__aviso {
+  padding: 0.9rem 1.1rem; margin: 1rem 0 1.8rem;
+  background: var(--papel-2); border-left: 3px solid var(--oro); border-radius: 0 8px 8px 0;
+  font-size: 0.9rem; font-weight: 600;
+}
+.hecho__nota { margin-top: 1.4rem; font-size: 0.86rem; color: var(--tinta-55); }
+.hecho__botones { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.8rem; }
+
+.sobre { border: 1px solid var(--linea); border-radius: var(--radio); background: var(--blanco); overflow: hidden; }
+.sobre__de {
+  padding: 0.7rem 1rem; background: var(--tinta); color: var(--papel);
+  font: 600 0.66rem/1.4 var(--texto); letter-spacing: 0.12em; text-transform: uppercase;
+}
+.sobre__tabla { width: 100%; border-collapse: collapse; }
+.sobre__tabla th, .sobre__tabla td {
+  padding: 0.65rem 1rem; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--linea); font-size: 0.84rem;
+}
+.sobre__tabla tr:last-child th, .sobre__tabla tr:last-child td { border-bottom: 0; }
+.sobre__tabla th {
+  width: 34%; font: 600 0.62rem/1.5 var(--texto); letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--tinta-55);
+}
+.sobre__linea { display: block; margin-bottom: 0.3rem; }
+.sobre__total { font-weight: 700; padding-top: 0.3rem; }
+
+/* ---------- club ---------- */
+.clubhero { position: relative; min-height: min(42vh, 340px); display: grid; align-items: end; overflow: hidden; }
+.clubhero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.clubhero__velo { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 20, 0, 0.2) 0%, rgba(0, 20, 0, 0.72) 100%); }
+.clubhero__in { position: relative; padding-bottom: clamp(1.6rem, 4vw, 2.6rem); padding-top: 4rem; }
+.clubhero h1 { color: #fff; margin-top: 0.7rem; }
+.kicker--claro { color: rgba(255, 255, 255, 0.82); }
+
+.club__h2 { font-size: 1.45rem; margin: 2rem 0 1rem; }
+.club__lista { list-style: none; display: grid; gap: 0.7rem; padding: 0; }
+.club__fila {
+  display: grid; grid-template-columns: 34px 1fr; gap: 0.6rem 0.8rem; align-items: center;
+  padding: 0.8rem; background: var(--blanco);
+  border: 1px solid var(--linea); border-radius: 10px;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.club__fila--si { border-color: var(--acento, var(--rioja)); box-shadow: var(--sombra-suave); }
+.club__fila img { width: 34px; height: auto; grid-row: span 2; }
+.club__nombre { font-family: var(--display); font-size: 1.25rem; font-weight: 600; line-height: 1.15; }
+.club__sub { font-size: 0.72rem; color: var(--tinta-55); margin-top: 0.15rem; }
+.club__fila .cant { grid-column: 2; justify-self: start; }
+
+.club__suma {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: 1.2rem; padding: 0.95rem 1.1rem;
+  background: var(--tinta); color: var(--papel); border-radius: 10px;
+}
+.club__suma span { font: 600 0.68rem/1 var(--texto); letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; }
+.club__suma strong { font-family: var(--display); font-size: 1.7rem; font-weight: 600; }
+.club__sinprecio { margin-top: 0.6rem; font-size: 0.8rem; color: var(--tinta-55); }
+.club__pie { margin-top: 0.9rem; font-size: 0.78rem; color: var(--tinta-55); }
+
+/* ---------- pie ---------- */
+.pie { margin-top: auto; padding: clamp(2rem, 5vw, 3rem) 0; background: var(--tinta); color: rgba(250, 248, 244, 0.78); }
+.pie__in { display: grid; gap: 1.5rem; }
+.pie__nombre { font-family: var(--display); font-size: 1.4rem; color: var(--papel); margin-bottom: 0.4rem; }
+.pie__linea { font-size: 0.82rem; line-height: 1.7; }
+.pie a { color: rgba(250, 248, 244, 0.9); }
+.pie__legal p { font-size: 0.74rem; line-height: 1.6; max-width: 46ch; }
+.pie__likwiid { margin-top: 0.9rem; opacity: 0.55; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.62rem !important; font-weight: 600; }
+
+/* ---------- de tableta en adelante ---------- */
+@media (min-width: 720px) {
+  body { font-size: 16.5px; }
+  .puertas { grid-template-columns: 1fr 1fr; }
+  .vino { grid-template-columns: minmax(180px, 260px) 1fr; align-items: start; }
+  .vino__foto { padding: 1.8rem 0; position: sticky; top: 90px; }
+  .vino__foto img { max-height: 340px; }
+  .cesta { grid-template-columns: 1fr minmax(280px, 340px); }
+  .cesta__aside { position: sticky; top: 92px; }
+  .cesta__linea { grid-template-columns: 56px 1fr auto auto; gap: 1rem; }
+  .cesta__linea img { width: 56px; grid-row: auto; }
+  .cesta__cant { grid-column: auto; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .cesta__importe { grid-column: auto; justify-content: flex-end; text-align: right; }
+  .club__fila { grid-template-columns: 40px 1fr auto; }
+  .club__fila img { width: 40px; grid-row: auto; }
+  .club__fila .cant { grid-column: auto; }
+  .pie__in { grid-template-columns: 1.3fr 1fr; align-items: start; }
+}
+
+@media (min-width: 1000px) {
+  .vino__datos { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- lazo de vista previa (solo en la compilacion de preview) ---------- */
+.lazo {
+  position: fixed; z-index: 90; right: -56px; top: 26px;
+  transform: rotate(45deg);
+  padding: 0.3rem 3.6rem;
+  background: var(--rioja); color: #fff;
+  font: 700 0.6rem/1.5 var(--texto); letter-spacing: 0.2em; text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(0, 20, 0, 0.25);
+  pointer-events: none;
+}
+@media (max-width: 720px) {
+  .lazo { right: -60px; top: 18px; padding: 0.24rem 3.4rem; font-size: 0.54rem; }
+}
+
+.hero__titulo { margin: 0; font-size: 0; line-height: 0; }
