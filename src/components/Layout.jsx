@@ -6,17 +6,6 @@ import { useCarrito } from '../store.js'
 const LOGO = import.meta.env.BASE_URL + 'img/logotipo.webp'
 const PREVIEW = import.meta.env.VITE_PREVIEW === '1'
 
-// Solo aparece en la compilacion de vista previa (la que vive en GitHub Pages).
-// La version que se instalaria en su alojamiento no lo lleva.
-export function Lazo() {
-  if (!PREVIEW) return null
-  return (
-    <div className="lazo" aria-hidden="true">
-      Vista previa
-    </div>
-  )
-}
-
 export function BandaDemo() {
   return (
     <div className="banda" role="note">
@@ -25,6 +14,9 @@ export function BandaDemo() {
         <strong>Demostración privada para Cupani.</strong> Nada de lo que haga aquí compra, cobra ni
         envía nada.
       </p>
+      {/* Solo en la compilacion de vista previa. La que se instalaria en su
+          alojamiento no lo lleva. */}
+      {PREVIEW && <span className="banda__lazo">Vista previa</span>}
     </div>
   )
 }
@@ -99,7 +91,6 @@ export default function Layout({ children }) {
       <a className="salto" href="#principal">
         Ir al contenido
       </a>
-      <Lazo />
       <BandaDemo />
       <Cabecera />
       <motion.main

@@ -11,6 +11,7 @@
   color: var(--papel);
   text-align: center;
 }
+.banda { flex-wrap: wrap; }
 .banda p { font-size: 0.76rem; line-height: 1.45; letter-spacing: 0.01em; }
 .banda strong { font-weight: 700; }
 .banda__punto {
@@ -123,7 +124,7 @@
 }
 .vino__foto img { width: auto; max-height: 260px; filter: drop-shadow(0 12px 24px rgba(0, 20, 0, 0.16)); }
 .vino__tipo {
-  font: 600 0.64rem/1 var(--texto); letter-spacing: 0.18em; text-transform: uppercase;
+  font: 600 0.72rem/1 var(--texto); letter-spacing: 0.1em;
   color: var(--acento, var(--rioja)); margin-bottom: 0.7rem;
 }
 .vino__nombre { font-size: clamp(1.7rem, 4.4vw, 2.3rem); margin-bottom: 1rem; }
@@ -402,18 +403,13 @@
   .vino__datos { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ---------- lazo de vista previa (solo en la compilacion de preview) ---------- */
-.lazo {
-  position: fixed; z-index: 90; right: -56px; top: 26px;
-  transform: rotate(45deg);
-  padding: 0.3rem 3.6rem;
+/* ---------- marca de vista previa (solo en la compilacion de preview) ---------- */
+.banda__lazo {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.6rem; border-radius: 999px;
   background: var(--rioja); color: #fff;
-  font: 700 0.6rem/1.5 var(--texto); letter-spacing: 0.2em; text-transform: uppercase;
-  box-shadow: 0 6px 18px rgba(0, 20, 0, 0.25);
-  pointer-events: none;
-}
-@media (max-width: 720px) {
-  .lazo { right: -60px; top: 18px; padding: 0.24rem 3.4rem; font-size: 0.54rem; }
+  font: 700 0.6rem/1.5 var(--texto); letter-spacing: 0.16em; text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .hero__titulo { margin: 0; font-size: 0; line-height: 0; }
